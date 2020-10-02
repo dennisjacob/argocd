@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sample-argo-validate
+  name: sample-argo-validate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-argo-validate
+  template:
+    metadata:
+      labels:
+        app: sample-argo-validate
+    spec:
+      containers:
+      - image: jacdenn/rhel7-httpd
+        name: rhel7-httpd
