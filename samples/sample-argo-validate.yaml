@@ -5,7 +5,7 @@ metadata:
     app: sample-argo-validate
   name: sample-argo-validate
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: sample-argo-validate
