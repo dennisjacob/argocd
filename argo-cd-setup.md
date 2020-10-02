@@ -1,9 +1,7 @@
 ### Argo CD Set up in On-Premise Kubernetes environment
 
 
-Step 1:
-
-Create a CA cert (Optional) and  TLS certtiifcate for configuring in ArgoCD 
+Step 1:  Create a CA cert (Optional) and  TLS certtiifcate for configuring in ArgoCD 
 
 ```bash
 root@kube-ub-master:~/argocd-certs# openssl genrsa -out argocd-ca.key
@@ -49,9 +47,7 @@ root@kube-ub-master:~/argocd-certs#
 
 ```
 
-Step 2: 
-
-Installation of Argo CD
+Step 2: Installation of Argo CD
 
 ```bash
 root@kube-ub-master:~/argocd-certs# kubectl create namespace argocd
@@ -103,7 +99,7 @@ root@kube-ub-master:~/argocd-certs#
 
 ```
 
-Step3 : 
+Step3 :  Set up of Ingress
 
 Set up the ingress in argocd namespace, with a TLS secret.
 Application can be accessed using the https://argocd-server.k8s.local/ 
@@ -144,14 +140,9 @@ NAME              CLASS    HOSTS                     ADDRESS        PORTS     AG
 my-argo-ingress   <none>   argocd-server.k8s.local   10.99.230.52   80, 443   32s
 root@kube-ub-master:~/argocd-certs#
 
-
-
 ```
 
 Step 4: An alternate option for Step3 is to use the NodePort, if you are using a lab on-premise set up.
-
-
-
 
 ```bash
 
@@ -225,7 +216,7 @@ notAfter=Nov  1 09:56:21 2020 GMT
 
 ```
 
-Step5: 
+Step5: Access the ArgoCD
 
 Access the  ArgoCD console using
 	- ArgoCD Server URL
